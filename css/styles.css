@@ -49,11 +49,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 
-/*@media screen and (max-width: 370px) {
-  #footer {
-    font-size: 14pt;
-  }
-}*/
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -284,12 +279,26 @@ nav h1 a {
 
 /* ====================== Responsive Design ====================== */
 @media screen and (max-width: 370px) {
-    #footer {
+
+  nav {
+    height: 60px;
+  }
+
+  #footer {
     font-size: 14pt;
+  }
+
+  .filter-options {
+    height: 50px;
   }
   
   .filter-options select {
-    font-size: 11pt;
-    width: 100px;
+    height: 25px;
+    font-size: 10pt;
+    width: 136px;
+  }
+
+  #restaurants-list {
+    padding: 15px 10px 15px;
   }
 }
