@@ -1,31 +1,32 @@
-const { watch } = require("gulp");
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require("browser-sync").create();
+const gulp        = require('gulp');
+const browserSync = require('browser-sync').create();
 
-function bs() {
-	browserSync.init({
-    server: "./"
-  });
-}
+// process JS files and return the stream.
+gulp.task('js', function () {
+    return gulp.src('js/*js')
+        .pipe(browserify())
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
+});
 
-exports.default = function() {
-	watch("js/*.js", { events: 'all' }, bs());
-	watch("css/*.css", { events: 'all' }, bs());
-	watch("*.html", { events: 'all' }, bs());
-}
-	
-function style() {
-    return (
-        gulp
-		    .src("css/styles.css")
-		    .pipe(
-		      autoprefixer({
-		        browsers: ["last 2 versions"]
-		      })
-		    )
-		    .pipe(gulp.dest("css/styles.css"))
-		    .pipe(browserSync.stream());
-    );
-}
+// create a task that ensures the `js` task is complete before
+// reloading browsers
+gulp.task('js-watch', ['js'], function (done) {
+    browserSync.reload();
+    done();
+});
 
-exports.style = style;
+// use default task to launch Browsersync and watch JS files
+gulp.task('default', ['js'], function () {
+
+    // Serve files from the root of this project
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+
+    // add browserSync.reload to the tasks array to make
+    // all browsers reload after tasks are complete.
+    gulp.watch("js/*.js", ['js-watch']);
+});
