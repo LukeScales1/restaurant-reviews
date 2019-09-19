@@ -1,4 +1,4 @@
-# Restaurant Reviews Project
+# Restaurant Reviews Project - Work In Progress!
 ---
 #### _Final Project - Udacity Front-End Web Development Nanodegree - Restaurant Reviews_
 
@@ -9,7 +9,7 @@ The intial goal is to take the static design provided by Udacity and to make thi
 
 ## Instructions
 
-To try this application, download or clone the project and open the `index.html` file from the project directory. Test the accessibility features by navigating through the page using `Tab` / `Shift + Tab`. If you are using Google Chrome, you can check how the responsive design appears on mobile devices or other screen sizes by opening the Chrome Dev Tools panel (`Ctrl + Shift + J`) and selecting a device type from the dropdown above the document view window. Alternatively you can resize the window using the slider in between the document view and the dev tools panel.
+To try this application, download or clone the project and open the `index.html` file from the project directory. Test the accessibility features by navigating through the page using `Tab` / `Shift + Tab`. If you are using Google Chrome, you can check how the responsive design appears on mobile devices or other screen sizes by opening the Chrome Dev Tools panel (`Ctrl + Shift + J`) and selecting a device type from the dropdown above the document view window. Alternatively you can resize the window using the slider in between the document view and the dev tools panel. Please bear in mind that this project is not yet completed!
 
 ## Contributing
 
